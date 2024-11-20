@@ -1,4 +1,4 @@
-<p align="left"><h1 align="left">FT_PRINTF</h1></p>
+<p align="left"><h1 align="left">REPLACE</h1></p>
 <p align="left">
 	<img src="https://img.shields.io/github/license/NaBuchholz/ft_printf?style=default&logo=opensourceinitiative&logoColor=white&color=0b96a2" alt="license">
 	<img src="https://img.shields.io/github/last-commit/NaBuchholz/ft_printf?style=default&logo=git&logoColor=white&color=0b96a2" alt="last-commit">
