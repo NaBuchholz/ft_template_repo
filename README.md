@@ -1,9 +1,10 @@
-<p align="left"><h1 align="left">REPLACE</h1></p>
+<p align="left"><h1 align="left">REPLACE WITH PROJECT NAME</h1></p>
 <p align="left">
-	<img src="https://img.shields.io/github/license/NaBuchholz/ft_printf?style=default&logo=opensourceinitiative&logoColor=white&color=0b96a2" alt="license">
-	<img src="https://img.shields.io/github/last-commit/NaBuchholz/ft_printf?style=default&logo=git&logoColor=white&color=0b96a2" alt="last-commit">
-	<img src="https://img.shields.io/github/languages/top/NaBuchholz/ft_printf?style=default&color=0b96a2" alt="repo-top-language">
-	<img src="https://img.shields.io/github/languages/count/NaBuchholz/ft_printf?style=default&color=0b96a2" alt="repo-language-count">
+	<img src="https://img.shields.io/github/license/<YOUR_USERNAME>/<YOUR_REPO>?style=default&logo=opensourceinitiative&logoColor=white&color=0b96a2" alt="license">
+	<img src="https://img.shields.io/github/last-commit/<YOUR_USERNAME>/<YOUR_REPO>?style=default&logo=git&logoColor=white&color=0b96a2" alt="last-commit">
+	<img src="https://img.shields.io/github/languages/top/<YOUR_USERNAME>/<YOUR_REPO>?style=default&color=0b96a2" alt="repo-top-language">
+	<img src="https://img.shields.io/github/languages/count/<YOUR_USERNAME>/<YOUR_REPO>?style=default&color=0b96a2" alt="repo-language-count">
+	<img src="https://github.com/<YOUR_USERNAME>/<YOUR_REPO>/workflows/<WORKFLOW_NAME_OR_FILE>/badge.svg" alt="repo-norminette">
 </p>
 <p align="left"><!-- default option, no dependency badges. -->
 </p>
