@@ -1,0 +1,76 @@
+{
+	"name": "42 C/C++ Environment",
+	"build": {
+	  "dockerfile": "Dockerfile",
+	  "context": "."
+	},
+	"customizations": {
+	  "vscode": {
+		"extensions": [
+		  "ms-vscode.cpptools",
+		  "ms-vscode.cpptools-extension-pack",
+		  "twxs.cmake",
+		  "xaver.clang-format",
+		  "streetsidesoftware.code-spell-checker",
+		  "eamodio.gitlens",
+		  "aaron-bond.better-comments",
+		  "vadimcn.vscode-lldb",
+		  "yzhang.markdown-all-in-one",
+		  "keyhr.42-c-format",
+		  "kube.42header",
+		  "MariusvanWijk-JoppeKoers.codam-norminette-3",
+		  "DoKca.42-ft-count-line"
+		],
+		"settings": {
+		  "editor.rulers": [80],
+		  "editor.tabSize": 4,
+		  "editor.insertSpaces": false,
+		  "files.trimTrailingWhitespace": true,
+		  "C_Cpp.clang_format_fallbackStyle": "{ BasedOnStyle: Google, IndentWidth: 4, TabWidth: 4, UseTab: Always, ColumnLimit: 80 }",
+		  "editor.formatOnSave": true,
+		  "C_Cpp.enhancedColorization": "enabled",
+		  "C_Cpp.intelliSenseEngine": "default",
+		  "C_Cpp.default.cStandard": "c99",
+		  "C_Cpp.default.includePath": [
+			"${workspaceFolder}/**",
+			"/usr/include",
+			"/usr/local/include"
+		  ],
+		  "[c]": {
+			"editor.defaultFormatter": "keyhr.42-c-format",
+			"editor.formatOnSave": true,
+			"editor.formatOnSaveMode": "modificationsIfAvailable"
+		  },
+		  "42header.username": "${localEnv:USER}",
+		  "42header.email": "${localEnv:USER}@student.42.fr",
+		  "42norminette.command": "norminette",
+		  "42norminette.showErrors": true,
+		  "42norminette.errorBackground": "rgba(255, 0, 0, 0.2)",
+		  "42norminette.trace.server": "messages",
+		  "terminal.integrated.defaultProfile.linux": "zsh",
+		  "terminal.integrated.profiles.linux": {
+			"bash": {
+			  "path": "/bin/bash"
+			},
+			"zsh": {
+			  "path": "/bin/zsh"
+			}
+		  }
+		}
+	  }
+	},
+	"runArgs": [
+	  "--cap-add=SYS_PTRACE",
+	  "--security-opt", "seccomp=unconfined"
+	],
+	"remoteUser": "vscode",
+	"forwardPorts": [],
+	"postCreateCommand": "bash ./.devcontainer/post-create.sh",
+	
+	"mounts": [
+	  "source=${localEnv:HOME}/.ssh,target=/home/vscode/.ssh,type=bind,consistency=cached,readonly"
+	],
+	
+	"workspaceFolder": "/workspaces/${localWorkspaceFolderBasename}",
+	"workspaceMount": "source=${localWorkspaceFolder},target=/workspaces/${localWorkspaceFolderBasename},type=bind,consistency=cached"
+  }
