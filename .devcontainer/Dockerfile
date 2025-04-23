@@ -1,24 +1,45 @@
-ARG VARIANT="ubuntu-22.04"
-FROM mcr.microsoft.com/vscode/devcontainers/base:0-${VARIANT}
+FROM ubuntu:22.04
 
-RUN apt-get update && export DEBIAN_FRONTEND=noninteractive \
-    && apt-get -y install build-essential gcc gdb cmake make git \
-    valgrind vim nano libcriterion-dev clang-format clang-tidy \
-    lldb net-tools iputils-ping \
-    && apt-get autoremove -y && apt-get clean -y
+# Evitar prompts interativos durante a instalação
+ARG DEBIAN_FRONTEND=noninteractive
 
-# Configurar norminette (se necessário para a 42)
-RUN apt-get -y install python3 python3-pip \
-    && pip3 install --break-system-packages --upgrade pip \
-    && pip3 install --break-system-packages norminette==3.3.51
+# Instalar dependências básicas
+RUN apt-get update && apt-get install -y \
+    build-essential \
+    gcc \
+    g++ \
+    gdb \
+    cmake \
+    make \
+    git \
+    curl \
+    wget \
+    valgrind \
+    vim \
+    nano \
+    python3 \
+    python3-pip \
+    netcat \
+    iputils-ping \
+    locales \
+    clang \
+    clang-format \
+    clang-tidy \
+    lldb \
+    && apt-get clean autoclean \
+    && apt-get autoremove -y \
+    && rm -rf /var/lib/apt/lists/*
 
-# Criar uma pasta para o projeto
-RUN mkdir -p /workspaces/project
+# Instalar norminette
+RUN pip3 install norminette==3.3.51
 
-# Configurar o usuário vscode
-USER vscode
+# Instalar ZSH 
+RUN apt-get update && apt-get install -y zsh && \
+    sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)" "" --unattended
+
+# Configurar zsh como shell padrão
+RUN chsh -s /bin/zsh
+
+# Definir o usuário padrão
+USER $USERNAME
 WORKDIR /workspaces/project
-
-# Configurar o .bashrc para mostrar configurações úteis
-RUN echo "echo '42 Dev Container ativado com sucesso!'" >> ~/.bashrc \
-    && echo "echo 'Norminette: $(norminette --version)'" >> ~/.bashrc
