@@ -31,7 +31,7 @@ RUN apt-get update && apt-get install -y \
     && rm -rf /var/lib/apt/lists/*
 
 # Instalar norminette
-RUN pip3 install norminette==3.3.51
+RUN pip3 install norminette==3.3.51 c_formatter_42
 
 # Instalar ZSH 
 RUN apt-get update && apt-get install -y zsh && \

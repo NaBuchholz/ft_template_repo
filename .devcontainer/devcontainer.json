@@ -1,5 +1,5 @@
 {
-	"name": "42 C/C++ Environment",
+	"name": "42 DevAn C/C++",
 	"build": {
 	  "dockerfile": "Dockerfile",
 	  "context": "."
